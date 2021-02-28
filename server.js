@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const taskRouter = require('./routes/taskRoutes');
 const app = express();
@@ -25,6 +26,7 @@ mongoose.connect('mongodb+srv://vivek:vivek123@cluster0-a1rol.mongodb.net/wasser
 
 // 1) MIDDLEWARE
 app.use(morgan('dev'));
+app.use(cors());
 
 app.use(express.json());
 
