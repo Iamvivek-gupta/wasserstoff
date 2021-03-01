@@ -32,7 +32,7 @@ exports.createTask = async (req, res) => {
         var newTask = await Task.create(body);
         res.status(201).json({
             status: 'new task created',
-            newUser: newTask
+            tasks: newTask
         })
     } catch(err){
         res.status(400).json({
